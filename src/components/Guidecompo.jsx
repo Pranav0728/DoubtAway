@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import styled from "styled-components";
 
 const Guidecompo = () => {
@@ -18,7 +18,7 @@ const Guidecompo = () => {
           height="400"
           src="https://www.youtube.com/embed/pl-tBjAM9g4"
           title="YouTube video player"
-          frameborder="0"
+          // frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
         ></iframe>
@@ -30,7 +30,7 @@ const Guidecompo = () => {
           height="400"
           src="https://www.youtube.com/embed/u-8nJj1EXhw"
           title="YouTube video player"
-          frameborder="0"
+          // frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
         ></iframe>

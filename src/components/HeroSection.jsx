@@ -1,16 +1,32 @@
-import React from "react";
+
+
+// import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { Button } from "../styles/Button";
+import Typewriter from 'typewriter-effect';
+
 
 const HeroSection = () => {
   return (
-    <Wrapper>
-      <div className="container grid grid-two-column">
+    <Wrapper className="bubble">
+      <div className="container grid grid-two-column ">
         <div className="section-hero-data">
           <div className="head">
-            <h1 className="hero-heading">DoubtAway</h1>
-            <h2>Where curiosity meets guidance</h2>
+            <h1 className="hero-heading">Doubt<span1>Away</span1></h1>
+            <div id='Multiples-skills-text'> 
+                    <p> <div className='MultiText'> <Typewriter 
+                                                options={{
+                                                        strings: [
+                                                        'Where curiosity meets guidance', 
+                                                        'The future of e-Learning is wide open!',
+                                                        'Online learning is an important tool'
+                                                        ],
+                                                        autoStart: true,
+                                                        loop: true,
+                                                    }}/></div></p>
+</div>
+
             <p className="hero-para">
               DoubtAway help students to solving the doubt by providing a
               separate platform. It would be great experience for student.
@@ -54,7 +70,7 @@ const HeroSection = () => {
               <h2>Why DoubtAway?</h2>
               <p className="hero-para">
                 Your direct path to learning clarity. Connecting students and
-                teachers effortlessly, we're here to ensure every question finds
+                teachers effortlessly, we are here to ensure every question finds
                 its answer, making your learning journey smoother than ever.
               </p>
             </div>
@@ -73,7 +89,6 @@ const Wrapper = styled.section`
     flex-direction: column;
     justify-content: center;
   }
-
   .btn {
     max-width: 16rem;
     margin-right: 2rem;
@@ -88,21 +103,48 @@ const Wrapper = styled.section`
     font-size: 2rem;
     color: ${({ theme }) => theme.colors.helper};
   }
+  
+  span1{
+    font-family: 'Inter', sans-serif;
+   
+  }
+
+  #Multiples-skills-text p{
+    font-size: 1.2rem;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 7px;
+    font-family: 'Inter', sans-serif;
+
+}
+.MultiText{
+  color:yellow;
+  margin-top: 0.5rem;
+  font-size: 3rem;
+ 
+}
+
   .container {
-    height: 60vh;
+    height: 90vh;
   }
   h2{
     font-weight:500;
   }
 
   .hero-heading {
-    font-size: 6.4rem;
+    font-size: 7rem;
+    color:white;
+    font-family: 'Kalam', cursive;
+
+
   }
 
   .hero-para {
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     margin-bottom: 3.4rem;
-    max-width: 60rem;
+    width: 60rem;
+    color:white;
+    font-size: 1.8rem;
   }
   .mode {
     background-color: #f8f9fa;
@@ -116,10 +158,12 @@ const Wrapper = styled.section`
 
   picture {
     text-align: center;
+   
   }
 
   .hero-img {
     max-width: 80%;
+    border-radius:20px;
   }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
