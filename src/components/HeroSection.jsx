@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { Button } from "../styles/Button";
 import Typewriter from 'typewriter-effect';
+import Card from "./Card.jsx"
 
 
 const HeroSection = () => {
@@ -57,16 +58,11 @@ const HeroSection = () => {
       <div className="mode">
         <div className="container grid grid-two-column middle">
           <div className="section-hero-image">
-            <picture>
-              <img
-                src="./images/doubt.jpeg"
-                alt="hero image"
-                className="hero-img "
-              />
-            </picture>
+            <Card className="card"/>
           </div>
+          
           <div className="section-hero-data">
-            <div className="head">
+            <div className="head newhead">
               <h2>Why DoubtAway?</h2>
               <p className="hero-para">
                 Your direct path to learning clarity. Connecting students and
@@ -76,12 +72,61 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
+        <div className="wave-container">
+      <div className="wave"></div>
+     </div>
       </div>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.section`
+
+@keyframes fade-up {
+  0%{
+      opacity: 0;
+      transform: translateY(30px) scale(0.9);
+  }
+
+
+  100%{
+      opacity: 1;
+      transform: rotateY(0px) scale(1);
+  }
+  .card{
+   z-index:10; 
+  }
+}
+.wave-container {
+  height: 2%;
+  width: 100%;
+  position: absolute;
+  //bottom: 50;
+  left: 0;
+  background-color: ${({ theme }) => theme.colors.helper};
+
+}
+.wave {
+  background: url(https://ilumina.ca/img/blue_bg_02.png)
+  repeat-x;
+  position: absolute;
+  top: -198px;
+  width: 6400px;
+  height: 300px;
+  // animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  transform: translate3d(0, 0, 0);
+ 
+  z-index:0;
+}
+@keyframes wave {
+  0% {
+     margin-left: 0;
+  }
+  100% {
+     margin-left: -1500px;
+  }
+}
+
   padding: 9rem 0;
 
   .section-hero-data {
@@ -108,6 +153,9 @@ const Wrapper = styled.section`
     font-family: 'Inter', sans-serif;
    
   }
+ .btn{
+    animation: fade-up 1s;
+  }
 
   #Multiples-skills-text p{
     font-size: 1.2rem;
@@ -122,6 +170,7 @@ const Wrapper = styled.section`
   margin-top: 0.5rem;
   font-size: 3rem;
  
+ 
 }
 
   .container {
@@ -135,25 +184,33 @@ const Wrapper = styled.section`
     font-size: 7rem;
     color:white;
     font-family: 'Kalam', cursive;
-
-
   }
 
+  .head{
+    animation: fade-up 1s;
+
+  }
   .hero-para {
     margin-top: 1rem;
     margin-bottom: 3.4rem;
     width: 60rem;
     color:white;
     font-size: 1.8rem;
+   
   }
   .mode {
     background-color: #f8f9fa;
+    margin-top:-2rem;
     padding: 10rem;
   }
   .section-hero-image {
     display: flex;
     justify-content: center;
     align-items: center;
+   
+  }
+  .section-hero-image img{
+    
   }
 
   picture {
@@ -164,7 +221,13 @@ const Wrapper = styled.section`
   .hero-img {
     max-width: 80%;
     border-radius:20px;
+    animation: fade-up 1s;
   }
+  .newhead p{ 
+    color:black;
+  }
+
+
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     .grid {
