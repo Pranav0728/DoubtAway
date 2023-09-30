@@ -4,7 +4,7 @@ import Home from "./Home";
 import Guide from "./Guide";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
-import { GlobalStyle } from "./GlobalStyle";
+import { GlobalStyle } from "./globalstyle";
 import GoToTop from "./components/GoToTop";
 import Sign from "./Sign";
 import Student from "./StudentC/Student";

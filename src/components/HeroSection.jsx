@@ -5,10 +5,31 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { Button } from "../styles/Button";
 import Typewriter from 'typewriter-effect';
-import Card from "./Card.jsx"
+import Card from "./Card.jsx";
+import teacher from "../Assets/teacher.jpg";
+
 
 
 const HeroSection = () => {
+
+  const observer = new IntersectionObserver((entries) =>{
+    entries.forEach((entry) =>{
+      console.log(entry);
+      if(entry.isIntersecting){
+        entry.target.classList.add('show');
+      }
+      else{
+        entry.target.classList.remove("show")
+      }
+    })
+  } )
+
+  const hiddenElements = document.querySelectorAll(".hidden");
+ 
+  hiddenElements.forEach((el) => observer.observe(el));
+
+
+
   return (
     <Wrapper className="bubble">
       <div className="container grid grid-two-column ">
@@ -48,20 +69,21 @@ const HeroSection = () => {
         <div className="section-hero-image">
           <picture>
             <img
-              src="./images/home.jpeg"
+              //src="./images/home.jpeg"
+              src={teacher}
               alt="hero image"
               className="hero-img "
-            />
+            /> 
           </picture>
         </div>
       </div>
       <div className="mode">
-        <div className="container grid grid-two-column middle">
-          <div className="section-hero-image">
+        <div className="container grid grid-two-column middle hidden">
+          <div className="section-hero-image hidden">
             <Card className="card"/>
           </div>
           
-          <div className="section-hero-data">
+          <div className="section-hero-data hidden">
             <div className="head newhead">
               <h2>Why DoubtAway?</h2>
               <p className="hero-para">
@@ -89,6 +111,7 @@ const Wrapper = styled.section`
   }
 
 
+
   100%{
       opacity: 1;
       transform: rotateY(0px) scale(1);
@@ -106,6 +129,7 @@ const Wrapper = styled.section`
   background-color: ${({ theme }) => theme.colors.helper};
 
 }
+
 .wave {
   background: url(https://ilumina.ca/img/blue_bg_02.png)
   repeat-x;
@@ -115,9 +139,11 @@ const Wrapper = styled.section`
   height: 300px;
   // animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
   transform: translate3d(0, 0, 0);
- 
   z-index:0;
+  
 }
+
+
 @keyframes wave {
   0% {
      margin-left: 0;

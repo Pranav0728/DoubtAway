@@ -28,6 +28,37 @@ body::-webkit-scrollbar-track {
    background-color: rgb(24 24 29);
 }
 
+//On-scorll Animation
+.hidden{
+  opacity:0;
+  filter:blur(5px);
+  transform:translateY(20px);
+  transition:all 1s;
+}
+
+.show{
+opacity:1;
+filter:blur(0);
+transform:translateY(0px);
+// ##
+
+}
+
+
+.hidden1{
+  opacity:0;
+  filter:blur(5px);
+  transform:translateY(20px);
+  transition:all 1s;
+}
+
+.show1{
+opacity:1;
+filter:blur(0);
+transform:translateY(0px);
+// ##
+
+}
 body::-webkit-scrollbar-thumb {
  
   background: #fff;
@@ -157,7 +188,9 @@ li {
       width: 100%;
       background-color:  ${({ theme }) => theme.colors.helper};
       height: 85%;
+      
   }
+ 
 
     .logo {
       height: auto;
