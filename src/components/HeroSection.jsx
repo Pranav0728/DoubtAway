@@ -7,27 +7,34 @@ import { Button } from "../styles/Button";
 import Typewriter from 'typewriter-effect';
 import Card from "./Card.jsx";
 import teacher from "../Assets/teacher.jpg";
+import { useEffect } from "react";
 
 
 
 const HeroSection = () => {
 
-  const observer = new IntersectionObserver((entries) =>{
-    entries.forEach((entry) =>{
-      console.log(entry);
-      if(entry.isIntersecting){
-        entry.target.classList.add('show');
-      }
-      else{
-        entry.target.classList.remove("show")
-      }
-    })
-  } )
+// Onscroll Animation function 
+useEffect(()=> {
+    let observer = new IntersectionObserver((entries) =>{
+       entries.forEach((entry) =>{
+         console.log(entry);
+         if(entry.isIntersecting){
+           entry.target.classList.add('show');
+         }
+         else{
+          //  entry.target.classList.remove("show")
+         }
+       })
+     } )
 
-  const hiddenElements = document.querySelectorAll(".hidden");
- 
-  hiddenElements.forEach((el) => observer.observe(el));
+     if (typeof document !== 'undefined') {
+       // will run in client's browser only
+       const hiddenElements = document.querySelectorAll(".hidden");
+        
+       hiddenElements.forEach((el) => observer.observe(el));
+   }
 
+     },[]);
 
 
   return (

@@ -45,20 +45,20 @@ transform:translateY(0px);
 }
 
 
-.hidden1{
-  opacity:0;
-  filter:blur(5px);
-  transform:translateY(20px);
-  transition:all 1s;
-}
+// .hidden1{
+//   opacity:0;
+//   filter:blur(5px);
+//   transform:translateY(50px);
+//   transition:all 1s;
+// }
 
-.show1{
-opacity:1;
-filter:blur(0);
-transform:translateY(0px);
-// ##
+// .show1{
+// opacity:1;
+// filter:blur(0);
+// transform:translateY(0px);
+// // ##
+// }
 
-}
 body::-webkit-scrollbar-thumb {
  
   background: #fff;

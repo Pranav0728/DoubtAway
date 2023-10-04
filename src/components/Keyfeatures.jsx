@@ -1,24 +1,35 @@
 //import React from "react";
 import styled from "styled-components";
 import imgs  from "../Assets/Safety.png";
+//import { useEffect } from "react";
 
 
 const Keyfeatures = () => {
 
-  const observer1 = new IntersectionObserver((entries1) =>{
-    entries1.forEach((entry1) =>{
-      console.log(entry1);
-      if(entry1.isIntersecting){
-        entry1.target.classList.add('show');
-      }
-      else{
-        //entry.target.classList.remove("show")
-      }
-    })
-  } )
+  // Onscroll Animation function 
+  // useEffect(()=> {
+  //   let observer = new IntersectionObserver((entries) =>{
+  //      entries.forEach((entry) =>{
+  //        console.log(entry);
+  //        if(entry.isIntersecting){
+  //          entry.target.classList.add('show');
+  //        }
+  //        else{
+  //          entry.target.classList.remove("show")
+  //        }
+  //      })
+  //    } )
+  
+  //    if (typeof document !== 'undefined') {
+  //      // will run in client's browser only
+  //      const hiddenElements = document.querySelectorAll(".hidden");
+        
+  //      hiddenElements.forEach((el) => observer.observe(el));
+  //  }
+  
+  //    },[]);
 
-  const hiddenElements1 = document.querySelectorAll(".hidden1");
-  hiddenElements1.forEach((el1) => observer1.observe(el1));
+
 
   const Keyfeature = styled.section`
     .container{
@@ -81,7 +92,7 @@ const Keyfeatures = () => {
     <Keyfeature>
       <h2 className="keyhead">- Key features -</h2>
       <div className="container grid grid-four-column ">
-        <div className="column ">
+        <div className="column hidden">
           <h2>Instant Doubt Resolution</h2>
           <div className="FeaturesIMGS">
           <picture>
@@ -97,7 +108,7 @@ const Keyfeatures = () => {
             answers and clear explanations.
           </p>
         </div>
-        <div className="column">
+        <div className="column hidden">
           <h2>Instant Doubt Resolution</h2>
           <div className="FeaturesIMGS">
           <picture>
@@ -113,7 +124,7 @@ const Keyfeatures = () => {
             answers and clear explanations.
           </p>
         </div>
-        <div className="column">
+        <div className="column hidden">
           <h2>Instant Doubt Resolution</h2>
           <div className="FeaturesIMGS">
           <picture>
@@ -129,7 +140,7 @@ const Keyfeatures = () => {
             answers and clear explanations.
           </p>
         </div>
-        <div className="column">
+        <div className="column hidden">
           <h2>Personalized Support</h2>
           <div className="FeaturesIMGS">
           <picture>
@@ -145,7 +156,7 @@ const Keyfeatures = () => {
             thoroughly.
           </p>
         </div>
-        <div className="column ">
+        <div className="column hidden">
           <h2>Convenient Accessibility</h2>
           <div className="FeaturesIMGS">
           <picture>
@@ -161,7 +172,7 @@ const Keyfeatures = () => {
             need it.
           </p>
         </div>
-        <div className="column ">
+        <div className="column hidden">
           <h2>Secure Learning Space</h2>
           <div className="FeaturesIMGS">
           <picture>
