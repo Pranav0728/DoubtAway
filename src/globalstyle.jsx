@@ -28,6 +28,37 @@ body::-webkit-scrollbar-track {
    background-color: rgb(24 24 29);
 }
 
+//On-scorll Animation
+.hidden{
+  opacity:0;
+  filter:blur(5px);
+  transform:translateY(20px);
+  transition:all 1s;
+}
+
+.show{
+opacity:1;
+filter:blur(0);
+transform:translateY(0px);
+// ##
+
+}
+
+
+// .hidden1{
+//   opacity:0;
+//   filter:blur(5px);
+//   transform:translateY(50px);
+//   transition:all 1s;
+// }
+
+// .show1{
+// opacity:1;
+// filter:blur(0);
+// transform:translateY(0px);
+// // ##
+// }
+
 body::-webkit-scrollbar-thumb {
  
   background: #fff;
@@ -121,6 +152,77 @@ li {
     font-size: 1.8rem;
     cursor: pointer;
     }
+
+    .is-sticky {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 999;
+      box-shadow: 0 2px 24px 0 rgb(0 0 0 / 15%);
+      background-color: ${({ theme }) => theme.colors.bg};
+      animation:  2s ease-in-out 0s normal none 1;
+      padding-top: 0px;
+      padding-bottom: 0px;
+      border-bottom: 0.0625rem solid #e0e0e0;
+    }
+
+    .Header{
+      padding: 0 4.8rem;
+   height: 5.5rem;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   position: fixed;
+   width: 100%;
+   top: 0;
+    }
+    
+    .bubble::after {
+      content: '';
+      border-top-left-radius: 170% 80%;
+      border-top-right-radius: 170% 80%;
+      position: absolute;
+      bottom: 0;
+      z-index: -1;
+      width: 100%;
+      background-color:  ${({ theme }) => theme.colors.helper};
+      height: 85%;
+      
+  }
+ 
+
+    .logo {
+      height: auto;
+      width: 17rem;
+      margin-bottom:-10px;
+    }
+  
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown span {
+      font-size: 2rem;
+      margin-right: 2rem;
+    }
+  
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 16rem;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      padding: 1.2rem 1.6rem;
+      z-index: 1;
+    }
+    .dropdown-content p {
+      font-size: 2rem;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  
 
 
 /* ===========================================

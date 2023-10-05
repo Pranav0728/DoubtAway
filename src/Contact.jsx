@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import styled from "styled-components";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -7,9 +7,17 @@ const Contact = () => {
   const Wrapper = styled.section`
     padding: 9rem 0 5rem 0;
 
+    .common-heading{
+      margin-top: 8rem;
+    }
+    .Inputbox{
+      border-radius:20px;
+      border:solid black 1px;
+    }
     .container {
       margin-top: 6rem;
       text-align: center;
+      
 
       .contact-form {
         max-width: 50rem;
@@ -55,6 +63,7 @@ const Contact = () => {
                 placeholder="username"
                 autoComplete="off"
                 required
+                className="Inputbox"
               />
 
               <input
@@ -63,6 +72,7 @@ const Contact = () => {
                 placeholder="Email"
                 autoComplete="off"
                 required
+                className="Inputbox"
               />
 
               <textarea
@@ -71,9 +81,10 @@ const Contact = () => {
                 rows="6"
                 autoComplete="off"
                 required
+                className="Inputbox"
               ></textarea>
 
-              <input type="submit" value="send" />
+              <input type="submit" value="send"  className="Inputbox" />
             </form>
           </div>
         </div>

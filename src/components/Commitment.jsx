@@ -1,5 +1,6 @@
-import React from "react";
+//import React from "react";
 import styled from "styled-components";
+import about1 from "../Assets/about.png"
 
 const Commitment = () => {
   const Commit = styled.section`
@@ -11,14 +12,14 @@ const Commitment = () => {
       text-align: center;
     }
     .image img {
-      width: 100%;
-      margin-bottom: 5rem;
+      width: 60%;
+      margin-top: -1rem;
     }
     h1 {
       margin-top: 3rem;
     }
     h3 {
-      margin-bottom: 5rem;
+      margin-top: 2rem;
     }
     padding: 9rem 0;
 
@@ -31,6 +32,7 @@ const Commitment = () => {
     .section-hero-image {
       height: 100%;
       width: 100%;
+      
     }
     .hero-top-data {
       text-transform: uppercase;
@@ -65,6 +67,24 @@ const Commitment = () => {
       max-width: 80%;
     }
 
+    .bubble1::after {
+      content: '';
+      border-top-left-radius: 170% 80%;
+      border-top-right-radius: 170% 80%;
+      border-bottom-left-radius: 170% 0%;
+      border-bottom-right-radius: 170% 0%;
+      position: absolute;
+      bottom: 0;
+      z-index: -1;
+      width: 50%;
+      background-color:  ${({ theme }) => theme.colors.helper};
+      height: 55%;
+      left:32rem;
+      
+
+      
+  }
+
     @media (max-width: ${({ theme }) => theme.media.mobile}) {
       .grid {
         gap: 7.2rem;
@@ -73,7 +93,7 @@ const Commitment = () => {
   `;
   return (
     <Commit>
-      <div className="container up">
+      <div className="container up bubble1">
         <h1>Helping expand learning for everyone</h1>
         <h3>
           We believe that everyone—educators and learners at every age and
@@ -82,7 +102,7 @@ const Commitment = () => {
           for themselves.
         </h3>
         <picture className="image">
-          <img src="./images/aboutbg2.jpg" alt="students" />
+          <img src={about1} />
         </picture>
       </div>
       <div className="container grid grid-two-column">

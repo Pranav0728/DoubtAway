@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { CgMenu, CgCloseR } from "react-icons/cg";
@@ -21,18 +21,22 @@ const Navbar = () => {
             text-decoration: none;
             font-size: 1.8rem;
             text-transform: uppercase;
-            color: ${({ theme }) => theme.colors.black};
-            transition: color 0.3s linear;
+            // color: ${({ theme }) => theme.colors.black};
+            border-radius:50px;
+            padding:0.5rem 1rem;
           }
 
           &:hover,
           &:active {
-            color: ${({ theme }) => theme.colors.helper};
+            color:white;
+            background-color:rgb(98 84 243);
+            transition: background-color 0.1s linear;
+            
           }
         }
       }
     }
-
+  
     .mobile-navbar-btn {
       display: none;
 
@@ -121,7 +125,7 @@ const Navbar = () => {
         <ul className="navbar-list">
           <li>
             <NavLink
-              className="navbar-link"
+              className="navbar-link home"
               onClick={() => setOpenMenu(false)}
               to="/">
               Home
